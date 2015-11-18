@@ -50,10 +50,12 @@ body {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em; }
+  font-size: 1.8em; 
+  border-bottom: 1px #bbb solid; }
 
 .reveal h2 {
-  font-size: 1.6em; }
+  font-size: 1.6em; 
+  border-bottom: 1px #ccc solid; }
 
 .reveal h3 {
   font-size: 1.3em; }
@@ -305,7 +307,7 @@ position: relative;
 top:35%;
 margin-right:3px;
 letter-spacing: 0.2em;
-font-size:1.3em;
+font-size:1.2em;
 }
 
 .custom_top span a{
