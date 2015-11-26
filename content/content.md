@@ -1,9 +1,28 @@
 <!-- 1. PRESENTATION -->
 
-## ENCORE UNE CONF SUR LA WEBPERF ?
+## ENCORE UNE CONF SUR LA WEBPERF ???!!!
 
-* **Généralités sur la WebPerfs**
-* **Axes d'optimisations**
+--
+
+## La webperf est essentiel !
+
+* Expérience / utilisation utilisateur
+* Qualité du service proposé (perception)
+* SEO
+* CA / ROI
+
+<!--
+Impact sur le business, CF stéphane RIOS selon de nombreuses études Amazon, Google, Yahoo, etc.
+Amazon : 100ms = 1% CA
+Google : référencemen naturel impact sur le référencement au dela de 4s de chargement
+Yahoo : +400ms = 10% en moins de traffic (Yahoo)
+-->
+
+--
+
+## Sujets abordés...
+
+* Retour sur les **Généralités sur la Webperf** et **Axes d'optimisations génériques**
 * **La WebPerf dans WordPress**
 * **Future de la WebPerf : HTML2 et PHP7**
 
@@ -20,19 +39,19 @@
 
 ---
 
-<!-- 2. GENERALITES -->
-## Web et performance
+<!-- 1. GENERALITES -->
 
-* **Constituantes du développement Web**
-  * Développement back / Serveur
-  * Développement front / Navigateur
-  * Connexion : subit par les développeur
+## Webperf KESAKO ?
 
-* **Performance / Plusieurs dimensions**
-  * Montée en charge
-  * Disponibilité du servuer
-  * Robustesse
-  * Délais de réponse
+* **Optimisation de l'affichage des pages de mon site**
+  1. COMPRENDRE : spécificités protocole et navigateur
+  1. OPTIMISER : contraintes actuelles
+  1. APREHENDER : contraintes futures
+
+* Vision globale essentielle
+  * Maitrise total : partie serveur
+  * Maitrise partielle : partie navigateur
+  * Maitrise quasi nulle : Réseau
 
 <!--
 Lorsque l'on parle de performance, il faut prendre en compte 3 éléments sur lesquels on peut plus ou moins agir :
@@ -45,20 +64,16 @@ On peut parler de performance à plusieurs niveaux : performance montée en char
 
 --
 
-## Webperf KESAKO ?
-
-* **Optimisation de l'affichage des pages de mon site**
-  1. COMPRENDRE : spécificités protocole et navigateur
-  1. OPTIMISER : aujourd'hui
-  1. APREHENDER : demain
-  1. VISION GLOBALE
+## Qu'est ce qu'on entend par Optimisation
 
 * **Optimisation**
   * **Temps** : TTFB / TTR / RRI / TTFC/ speed index
   * **Poids** : poids moyen des pages
   * **Communication** : nombre de requettes
   * **Qualité** : complexité / optimisation du DOM
-  * --> AMELIORER L'Expérience utilisateur
+
+* OBJECTIF : AMELIORER L'EXPERIENCE UTILISATEUR
+
 
 <!--
 * Focus sur l'optimisation de l'affichage des pages de mon site  :
@@ -74,24 +89,6 @@ nombre de requettes, complexité du DOM, time to first click
 
 --
 
-## L'impact de la Webperf :
-
-* Expérience / utilisation utilisateur
-* Qualité du service proposé (perception)
-* SEO
-* CA / ROI
-
-<!--
-Impact sur le business, CF stéphane RIOS selon de nombreuses études Amazon, Google, Yahoo, etc.
-Amazon : 100ms = 1% CA
-Google : référencemen naturel impact sur le référencement au dela de 4s de chargement
-Yahoo : +400ms = 10% en moins de traffic (Yahoo)
--->
-
---
-
-<!-- 5. LES OUTILS -->
-
 ## Outils
 
 * En ligne
@@ -99,7 +96,7 @@ Yahoo : +400ms = 10% en moins de traffic (Yahoo)
   * WebPageTest
   * Google Page Speed
 
-* Outils desktop
+* En local
   * YSlow
   * OPQuast
   * Jmeter
@@ -108,15 +105,21 @@ Yahoo : +400ms = 10% en moins de traffic (Yahoo)
 
 ## Que se passe-t-il quand j'interroge une page WEB ?
 
-Schéma simple pour expliquer les problématiques d'appel d'une pages et les process en jeu
-Reprendre le Schéma et positionner les éléments liés à la WebPerf
-
-présenter un waterfall
+![logo](img/waterfall.png "Logo Title Text 2")
 
 --
 
 ## Et WordPress dans tout ça ?
-* Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
+* Structure saine pour faire de la WebPerf
+* Plusieurs points d'optimisation prévus ...
+* ... mais pas automatique
+
+* Warning sur les développements tiers
+  * Plugins
+  * Thèmes premiums
+
+
+Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
 * Passif de WordPress pas reconnu pour son orientation performance
 * Possibilité de l'optimiser en utilisant des règles spécifiques
 * De nombreux développements tiers utilisés non optimisés (ne dépend pas que du coeur)
@@ -287,7 +290,7 @@ présenter un waterfall
     * Une seule connexion persisante
     * Multiplexed connexion
     * HPACK compression standard - compression du header / encodage binaire
-    * Priorisation des requêtes et gestion de dépendances
+    * Priorisation des requêtes / gestion de dépendances / anticipation des connexions
 
 --
 
