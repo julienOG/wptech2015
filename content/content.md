@@ -24,11 +24,11 @@ Yahoo : +400ms = 10% en moins de traffic (Yahoo)
 
 * Retour sur les **Généralités sur la Webperf** et **Axes d'optimisations génériques**
 * **La WebPerf dans WordPress**
-* **Future de la WebPerf : HTML2 et PHP7**
+* **Future de la WebPerf : HTML2 / PHP7 / MYSQL 5.7**
 
 --
 
-## Qui sommes nous ?
+## Nice to meet you...
 
 * Pierre Dargham
 * Julien OGER
@@ -105,7 +105,7 @@ nombre de requettes, complexité du DOM, time to first click
 
 ## Que se passe-t-il quand j'interroge une page WEB ?
 
-![logo](img/waterfall.png "Logo Title Text 2")
+![waterfall1](img/waterfall.png "WaterFall 1")
 
 --
 
@@ -286,15 +286,22 @@ Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
   * Standard IETF sortie début 2015
   * Reprends les bases de http 
     * (GET, POST, etc.) / status code (404) / links / header
-  * Ajoute 4 nouvelles features
-    * Une seule connexion persisante
-    * Multiplexed connexion
+  * Ajoute de nouvelles features
+    * Une seul et unique connexion TCP
+    * Multiplexed connexion : asynchrone et multiple
     * HPACK compression standard - compression du header / encodage binaire
+    * Cache pushing : anticipation côté serveur (HTML + CSS)
+    * Optimisation et amélioration du chiffrement
     * Priorisation des requêtes / gestion de dépendances / anticipation des connexions
+
+Note: IETF = The Internet Engineering Task Force
 
 --
 
 ## Pré-requis en terme de développement
+* Sur mon code source...
+  * aucune modif à prévoir
+
 * Compatibilité navigateur OK mais...
   * necessite SSL
   * pb limités sur la perfs car 1 seule connexion persistante
@@ -317,12 +324,16 @@ Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
 
 # Impact sur le Waterfall
 
-<!-- reprendre l'exemple de Waterfall avant / apres + explications -->
+![waterfall2](img/waterfall2.png "WaterFall 2")
 
 --
 
-# http2 une solution parfaite ?
-* Solution mûre ?
+# http2 tout bénef ?
+* Quid de la maturité ?
+Note: même si rien à faire côté dev, attention à l'implémentation par les serveur web et les navigateurs
+* mauvaise utilisation des spécificités http2
+  * maintien de la connexion TCP
+  * cache Pushing
 
 ---
 
@@ -330,6 +341,10 @@ Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
 <!-- 4. LE FUTURE DE LA WEBPERF PHP7 -->
 
 ## PHP 7
+
+<!-- 4. LE FUTURE DE LA WEBPERF MySQL 5.7 -->
+
+## MySQL 5.7
 
 
 ---
