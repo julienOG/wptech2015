@@ -1,6 +1,6 @@
 <!-- 1. PRESENTATION -->
 
-## ENCORE UNE CONF SUR LA WEBPERF ?
+## ENCORE UNE CONF SUR LES WEBPERF ?
 
 * **Généralités sur la WebPerfs**
 * **Axes d'optimisations**
@@ -130,139 +130,66 @@ présenter un waterfall
 
 <!-- 3. AXES d'AMEMLIORATIONS ACTUELS - GENERAL-->
 
-## Concaténation
+## Cache serveur
+* Cache opcode
+* Cache mémoire (-> object-cache.php)
+* Cache fichier (-> advanded-cache.php)
+* Cache mysql
+* Transients API
+* (reverse proxy, https://spudpress.com/)
 
 --
 
-## Minification
+## Cache client
+* Expire headers
+* 2nd view / cache plein
 
 --
 
-## Sprite CSS
+## Diminuer le nombre de requêtes
+* Concaténation
+* Sprites
+* Data-URI
+* Icon-fonts
+* Chargement asynchrone / lazy-load
 
 --
 
-## Positionnement des JS
+## Diminuer le poids des ressources
+* Minification
+* Optimisation des images
+* Compression gzip
+* Servir des ressources adaptées au support
 
 --
 
-## compilation just-in-time
+## Prioriser les ressources
+* Positions des css / js
+* Ligne de flotaison
+* Attention au navigateur
 
 --
 
-## Gestion des images
+## Diminuer le temps de dialogue
+* Cookies-free domains
+* SSL ? Keep-alive ?
+* Domain sharding ? CDN ...
 
 --
 
-## icones et pictogrammes : data-uri ? sprite ? font ?
+## Particularités WordPress
+* wp_enqueue_scripts, wp_enqueue_styles
+* Nettoyer la base de données
+* Plugins tiers ? Thèmes premium ?
+* Template-hierarchy
+* Utilisez les hooks !
+* Traitements en Back-Office et non à l'affichage
 
 --
 
-## data-uri
-
---
-
-## les fonts
-
---
-
-## Lazy load
-* ligne de flotaison
-
---
-
-## preconnect
-
---
-
-## Cache
-* Cache statique
-* Cache Opcode
-* Cache Objet
-
---
-
-## Expire header
-
---
-
-## Compression Gzip / Deflate
-
---
-
-## Spécificité Apache : configuration .htaccess
-
---
-
-## Domain sharding
-
---
-
-## CDN, cookie-free domain
-
---
-
-## Quid du mobile
-
----
-
-<!-- 3.bis AXES d'AMEMLIORATIONS ACTUELS - WORDPRESS -->
-
-## wp-config
-* Constante
-
---
-
-## .htaccess type
-
---
-
-# wp_enqueue_scripts, wp_enqueue_styles
-
---
-
-## Optimisation de la base de donnée
-* optimisation des requêtes SQL et de la base WP
-
---
-
-## pre_get_posts
-
---
-
-## Alléger le hook Core
-* Débranchement de fonctions non utilisées sur les hooks core
-
---
-
-## Traitement en amont de l'affichage
-* faire les traitements lourds à l'enregistrement, et non à l'affichage
-
---
-
-## volumétrie : fichiers media / base de données
-
---
-
-## Transients
-
---
-
-## Automatiser : quid d'un theme starter
-
---
-
-## Cas du multisite
-
---
-
-## Spécificités Woocommerce
-* Comment concaténer les scripts de woocommerce ?
-
---
-
-## Quid des gros plugins tiers
-* page builder ? acf ?
+## Considérations généales
+* 1 même calcul doit se faire 1 seule fois
+* Ayez des méthodes : frameworks, theme-starter, skeletons
 
 ---
 
@@ -327,7 +254,8 @@ présenter un waterfall
 <!-- 4. LE FUTURE DE LA WEBPERF PHP7 -->
 
 ## PHP 7
-
+* réécriture du moteur
+* compilation just-in-time
 
 ---
 
@@ -344,3 +272,37 @@ présenter un waterfall
 
 ## Question ?!
 
+
+---
+
+<!-- 8. A VOIR -->
+
+## Plugins WordPress
+- [WP Super Cache](https://wordpress.org/plugins/wp-super-cache/)
+- [W3 Total Cache](https://wordpress.org/plugins/w3-total-cache/)
+- [WP Rocket](http://wp-rocket.me/fr/)
+- [MinQueue](https://fr.wordpress.org/plugins/minqueue/)
+- [Ajax Load More](https://fr.wordpress.org/plugins/ajax-load-more/)
+- [Soil](https://github.com/roots/soil)
+
+## Liens et références
+- [GTmetrix](https://gtmetrix.com/)
+- [YSlow](http://yslow.org/)
+- [WebPageTest](http://www.webpagetest.org/)
+- [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
+- [Query Monitor](https://fr.wordpress.org/plugins/query-monitor/)
+
+## Documents de référence
+- [Checklist Opquast](http://checklists.opquast.com/webperf/)
+- [FAQ GTmetrix](https://gtmetrix.com/faq.html)
+- [Recommandations GTmetrix (Yslow + PageSpeed)](https://gtmetrix.com/recommendations.html)
+- [Yahoo!'s Exceptional Performance best practices](https://developer.yahoo.com/performance/rules.html)
+- [YSlow Ruleset Matrix](http://yslow.org/ruleset-matrix/)
+- [Google PageSpeed rules](https://developers.google.com/speed/docs/insights/rules)
+- [Google Developers > fundamentals > performance](https://developers.google.com/web/fundamentals/performance/)
+
+## Conférences liées
+- [Webperf 2.0 (Paris-web 2015)](http://www.paris-web.fr/2015/conferences/webperf-20.php)
+- [Comprendre et optimiser la base de données WordPress (WP-TECH 2014)](http://2014.wptech.fr/session/bdd-wordpress/)
+- [Mise en place d’un cache serveur (WP-TECH 2014)](http://2014.wptech.fr/session/cache-serveur/)
+- [Mon site est lent ! Que faire ? (WordCamp Paris 2015)](https://paris.wordcamp.org/2015/session/mon-site-est-lent-que-faire/)
