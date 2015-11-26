@@ -1,4 +1,14 @@
 <!-- 1. PRESENTATION -->
+
+## ENCORE UNE CONF SUR LA WEBPERF ?
+
+* **Généralités sur la WebPerfs**
+* **Axes d'optimisations**
+* **La WebPerf dans WordPress**
+* **Future de la WebPerf : HTML2 et PHP7**
+
+--
+
 ## Qui sommes nous ?
 
 * Pierre Dargham
@@ -7,15 +17,6 @@
 --
 
 ## GLOBALIS
-
---
-
-## Sujets de cette conférence
-
-* **Généralités sur la WebPerfs**
-* **Axes d'optimisations**
-* **La WebPerf dans WordPress**
-* **Future de la WebPerf : HTML2 et PHP7**
 
 ---
 
@@ -52,11 +53,12 @@ On peut parler de performance à plusieurs niveaux : performance montée en char
   1. APREHENDER : demain
   1. VISION GLOBALE
 
-* **Amélioration**
+* **Optimisation**
   * **Temps** : TTFB / TTR / RRI / TTFC/ speed index
   * **Poids** : poids moyen des pages
   * **Communication** : nombre de requettes
   * **Qualité** : complexité / optimisation du DOM
+  * --> AMELIORER L'Expérience utilisateur
 
 <!--
 * Focus sur l'optimisation de l'affichage des pages de mon site  :
@@ -295,8 +297,8 @@ présenter un waterfall
   * pb limités sur la perfs car 1 seule connexion persistante
 
 * Compatibilité serveur OK mais...
-  * Apache : complexe
-  * NGinx : simple et efficace
+  * Apache : Configuration ++
+  * NGinx : Natif
 
 --
 
