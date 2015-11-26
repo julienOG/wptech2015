@@ -47,9 +47,10 @@ On peut parler de performance à plusieurs niveaux : performance montée en char
 ## Webperf KESAKO ?
 
 * **Optimisation de l'affichage des pages de mon site**
-  1. CONNAISSANCE : spécificités protocole et navigateur
-  2. OPTIMISATION : des développements back / front
-  3. ADAPTER : configuration côté serveur 
+  1. COMPRENDRE : spécificités protocole et navigateur
+  1. OPTIMISER : aujourd'hui
+  1. APREHENDER : demain
+  1. VISION GLOBALE
 
 * **Amélioration**
   * **Temps** : TTFB / TTR / RRI / TTFC/ speed index
