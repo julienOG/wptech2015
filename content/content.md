@@ -1,41 +1,70 @@
 <!-- 1. PRESENTATION -->
+<!-- .slide: data-background-color="#000000" data-background="img/1_again.jpg" -->
 
-## ENCORE UNE CONF SUR LA WEBPERF ???!!!
+## ENCORE DE LA WEBPERF ?
 
 --
 
-## La webperf est essentielle !
+## La webperf : un fondamental !
 
-* Expérience utilisateur
-* Qualité du service proposé (perception)
+* Qualité de service
+* Couts
 * SEO
-* CA / ROI
+* Business
+
+|               | Délais        | Impact                        |
+| ------------- |:--------------|:------------------------------|
+| **AMAZON**    | + 100ms       | -1%   <small>_CA_</small>     |
+| **BING**      | + 1s          | -2,8% <small>_CA_</small>     |
+| **Yahoo**     | + 400ms       | -10%   <small>_Traffic_</small>|
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 <!--
+
 Impact sur le business, CF stéphane RIOS selon de nombreuses études Amazon, Google, Yahoo, etc.
 Amazon : 100ms = 1% CA
 Google : référencemen naturel impact sur le référencement au dela de 4s de chargement
 Yahoo : +400ms = 10% en moins de traffic (Yahoo)
+
+Qualité de service
+↗ Expérience client
+↗ Satisfaction
+
+Réduction des coûts
+↘ Consommation de bande passante
+↘ Charge serveur
+↗ QualityScore AdWords
+
+SEO
+↗ Position dans les résultats
+↗ Crawl & fraicheur de l'index
+
+Business
+↗ Convertion
+↗ Taux de transformation
+↗ Rebonds
+
 -->
 
 --
 
-## Sujets abordés...
+## Voyons ça de plus près...
+<!-- .slide: data-background-color="#FFF" data-background="img/2_speed.jpg" -->
 
-* Retour sur les **Généralités sur la Webperf** et **Axes d'optimisations génériques**
-* **La WebPerf dans WordPress**
-* **Futur  de la WebPerf : HTML2 / PHP7 / MYSQL 5.7**
-
---
-
-## Nice to meet you...
-
-* Pierre Dargham
-* Julien OGER
+1. **Apprivoiser** la Webperf
+2. **Axes d'optimisations génériques** VS ![WordPress](img/2_wordpress.png "Logo WordPress")
+3. **Futur  de la Webperf avec**
+  * HTML2
+  * PHP7
+  * MYSQL 5.7
 
 --
 
-## GLOBALIS
+<!-- .slide: data-background-color="#FFF" data-background="img/2_profil.jpg" -->
+
+--
+
+![WordPress](img/2_globalis.png "Logo WordPress")
 
 ---
 

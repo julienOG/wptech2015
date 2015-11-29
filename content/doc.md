@@ -19,6 +19,8 @@ WP-TECH 2015
 
 ** Lien ** : <http://2015.wptech.fr/session/pensez-web-performances-avec-wordpress/>
 
+** Résolution : 1280 * 768
+
 
 ### Résumé de la conférence
 
