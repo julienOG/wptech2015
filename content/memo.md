@@ -11,3 +11,7 @@ resources hints (preload, prerender, preconnect)
 http://blog.resoneo.com/2012/02/de-la-mesure-des-temps-de-chargement/
 http://fr.slideshare.net/kennydee/initiation-webperf-comprendre-analyser-et-optimiser-les-performances-web-frontend
 http://www.zdnet.fr/actualites/http-2-une-evolution-importante-du-protocole-du-web-notamment-pour-les-mobiles-39798198.htm
+http://www.codeursenseine.com/assets/slides/introduction-webperf.pdf
+http://www.browserscope.org/
+
+https://openclassrooms.com/courses/les-requetes-http

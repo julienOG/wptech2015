@@ -16,7 +16,7 @@
 | ------------- |:--------------|:------------------------------|
 | **AMAZON**    | + 100ms       | -1%   <small>_CA_</small>     |
 | **BING**      | + 1s          | -2,8% <small>_CA_</small>     |
-| **Yahoo**     | + 400ms       | -10%   <small>_Traffic_</small>|
+| **Yahoo**     | + 400ms       | -10%  <small>_Traffic_</small>|
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
 <!--
@@ -64,86 +64,131 @@ Business
 
 --
 
-![WordPress](img/2_globalis.png "Logo WordPress")
+![globalis](img/2_globalis.png "Logo GLOBALIS")
 
 ---
 
 <!-- 1. GENERALITES -->
 
-## Webperf KESAKO ?
+<!-- .slide: data-background-color="#dd392c" -->
 
-* **Optimisation de l'affichage des pages de mon site**
-  1. COMPRENDRE : spécificités protocole et navigateur
-  1. OPTIMISER : contraintes actuelles
-  1. APREHENDER : contraintes futures
-
-* Vision globale essentielle
-  * Maitrise totale : partie serveur
-  * Maitrise partielle : partie navigateur
-  * Maitrise quasi nulle : Réseau
-
-<!--
-Lorsque l'on parle de performance, il faut prendre en compte 3 éléments sur lesquels on peut plus ou moins agir :
-* Serveur : beaucoup négligé / machine sur dimensionné / aujourd'hui important sur d'autres considérations (écologie),
-* Navigateur : dépend des temps de traitements côté serveur + bonnes pratiques côté front 
-* Tuyaux : limitation physique et non maîtrisable / Limitation dans l'utilisation de ce tuyaux qui en fonction du protocole et du navigateur présente de facteurs limitants qu'il faut prendre en compte. Contrainte toujours croissante avec la prise en charge du mobile (3G / 4G) et de la localisation géographique (Zones isolées / distances / passage multiple noeuds et proxy / limitation politique...)
-
-On peut parler de performance à plusieurs niveaux : performance montée en charge, la disponibilité, la robustesse, les délais de réponse.
--->
+# Apprivoiser la WebPerf
 
 --
 
-## Qu'est ce qu'on entend par Optimisation
+<!-- .slide: data-background-color="#FFF" data-background="img/3_up.jpg" -->
 
-* **Optimisation**
-  * **Temps** : TTFB / TTR / RRI / TTFC/ speed index
-  * **Poids** : poids moyen des pages
-  * **Communication** : nombre de requettes
-  * **Qualité** : complexité / optimisation du DOM
+## Performance Web
 
-* OBJECTIF : AMELIORER L'EXPERIENCE UTILISATEUR
+**Optimisation de l'affichage des pages de mon site**
+  1. **COMPRENDRE** : spécificités protocole et navigateur
+  1. **OPTIMISER** : contraintes actuelles
+  1. **APREHENDER** : contraintes futures
 
+--
+
+## Vision globale
+
+![reseau](img/3_reseau.png "Réseau")
+
+|               | Maitrise           |
+| ------------- |:-------------------|
+| **Serveur**   | Totale (ou presque)|
+| **Navigateur**| Limitée / [BrowserScope](http://www.browserscope.org/)|
+| **Réseau**    | Quasi-nulle        |
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 <!--
 * Focus sur l'optimisation de l'affichage des pages de mon site  :
-1. Connaitre le fonctionnement / les limites / spécifictés navigateur (browserScope.org / latence / connexions simultanées par domaine / Fonctionnement CSS /JS, etc.) / limitation du nombre de connexion simultanée 6 à 8
-2. Optimiser mes développement
-3. Adapter la configuration de mon environnement server serveur d'application / reverses proxy...
-
-Start render / Document complete / fully loaded / requests / Bytes In
-
-Time To First Byte, Time To Render, Time to Interaction, speed index, temps de chargement moyen, poid moyen des pages
-nombre de requettes, complexité du DOM, time to first click
+1. Connaitre le fonctionnement / les limites / spécifictés navigateur (browserScope.org / latence / connexions simultanées par domaine / Fonctionnement CSS /JS, etc.) / limitation du nombre de connexion simultanée 6 à 8 (13 pour IE11) + temps de négociation TCP 100ms
+2. Optimiser mes développement au niveau servereur et Navigateur
+3. Appréhender les contraintes futures
 -->
 
 --
 
+<!-- .slide: data-background-color="#FFF" data-background="img/3_time.jpg" -->
+
+## Améliorer la performance
+
+  * **Temps** : TTFB / TTR / TTI
+  * **Poids**
+  * **Communication** : nombre de requettes
+  * **Qualité** : complexité / optimisation du DOM
+
+> **OBJECTIF CLE : L'EXPERIENCE UTILISATEUR**
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+<!--
+* **Amélioration en terme de : **
+  * **Temps** : Time To First Byte, Time To Render, Time to Interaction
+  * **Poids** : poids moyen des pages / HTML / images / CSS JS
+  * **Communication** : nombre de requettes limité le nombre de requete (limite navigateur + temps de négociation de 100ms à chaque fois)
+  * **Qualité** : complexité / optimisation du DOM
+-->
+
+--
+
+<!-- .slide: data-background-color="#FFF" data-background="img/3_tool.jpg" -->
+
 ## Outils
 
-* En ligne
-  * GTMetrix
-  * WebPageTest
-  * Google Page Speed
+| Desktop                                               | En ligne                   |
+| ---------------------------------------               |:---------------------------|
+| [YSlow](http://yslow.org/)                            | [WebPageTest](http://www.webpagetest.org/)    |
+| [Opquast Desktop](https://desktop.opquast.com/fr/)    | [GTmetrix](https://gtmetrix.com/)                     |
+|                                                       | [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)               |
 
-* En local
-  * YSlow
-  * OPQuast
-  * Jmeter
+> **Pensez à utiliser votre navigateur**
+  * Outils développeurs
+  * Informations utiles
+  * Simulation réseau/terminaux
+
+
+
+<!--
+Coupler à un outil d'analytics tel que Google Analytics ou Dynatrace pour faire le parralèle avec les taux de rebonds, de conversion...
+Navigateur :
+- Information sur taille de fichiets et temps
+- Offre les outils de simulation réseau / terminaux pour les tests
+-->
 
 --
 
-## Que se passe-t-il quand j'interroge une page WEB ?
+## Protocole HTTP/1.1
 
-![waterfall1](img/waterfall.png "WaterFall 1")
+![http](img/3_http.png "http")
+
+<!--
+HTTP/1.1
+* Suite de requetes séquentielles
+* requete : entete (host / cookie / type de connexion close|keepalive /content-type / content-length) + corps 
+* réponse : status + entete (date / serveur / content type / content-length / set-cookie) + corps
+-->
 
 --
+
+## Waterfall
+
+![waterfall](img/3_waterfall.png "http")
+<!--
+Désolé pour le test un peu foireux ce jour la =)
+Waterfall
+* Start render : premier rendu à l'écran
+* Dom Content Loaded : tous le html est chargé
+* Document complete : fin de chargement de la page
+-->
+
+--
+
+<!-- .slide: data-background-color="#FFF" data-background="img/3_wordpress.jpg" -->
 
 ## Et WordPress dans tout ça ?
-* Structure saine pour faire de la WebPerf
+* Structure saine pour la Webperf
 * Plusieurs points d'optimisation prévus ...
 * ... mais pas automatiques
 
-* Warning sur les développements tiers
+* WARNING sur les développements tiers :
   * Plugins
   * Thèmes premiums
 
@@ -161,6 +206,32 @@ Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
 ---
 
 <!-- 3. AXES d'AMEMLIORATIONS ACTUELS - GENERAL-->
+
+<!-- .slide: data-background-color="#dd392c" -->
+
+#Axes d'optimisations
+
+> Génériques VS WordPress
+
+--
+
+<!-- .slide: data-background-color="#FFF" data-background="img/3_optimisation.jpg" -->
+
+## Libellé de l'optimisation
+* Information 1
+* Information 2
+
+**Optimisation pour WordPress**
+* Information 1
+* Information 2
+
+```php
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
+
+--
 
 ## Cache serveur
 * Cache opcode
@@ -226,6 +297,14 @@ Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
 ---
 
 <!-- 4. LE FUTURE DE LA WEBPERF HTTP2 -->
+
+<!-- .slide: data-background-color="#dd392c" -->
+
+#Futur de la WebPerf
+
+> HTTP2 / PHP5 / MySQL 5.7
+
+--
 
 ## De http/1.1...
 
@@ -294,7 +373,7 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
   * maintien de la connexion TCP
   * cache Pushing
 
----
+--
 
 
 <!-- 4. LE FUTURE DE LA WEBPERF PHP7 -->
@@ -304,7 +383,7 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
 * réécriture du moteur
 * compilation just-in-time
 
----
+--
 
 <!-- 4. LE FUTURE DE LA WEBPERF MySQL 5.7 -->
 
@@ -316,6 +395,8 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
 
 <!-- 6. CONCLUSION -->
 
+<!-- .slide: data-background-color="#dd392c" -->
+
 ## Pour Conclure...
 * Webperf important et en pleine évolution
 * Domaine très large : régionalisation / CDN / Profiling côté client / Domain sharding / Stratégie de chargement de contenu ...
@@ -326,7 +407,6 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
 <!-- 7. QUESTIONS -->
 
 ## Question ?!
-
 
 ---
 
@@ -342,10 +422,10 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
 
 ## Liens et références
 - [GTmetrix](https://gtmetrix.com/)
-- [YSlow](http://yslow.org/)
 - [WebPageTest](http://www.webpagetest.org/)
 - [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
 - [Query Monitor](https://fr.wordpress.org/plugins/query-monitor/)
+- [YSlow](http://yslow.org/)
 
 ## Documents de référence
 - [Checklist Opquast](http://checklists.opquast.com/webperf/)
