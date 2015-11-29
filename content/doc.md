@@ -15,7 +15,7 @@ WP-TECH 2015
 
 ** Lieu ** : Nantes, Faculté de Pharmacie, 9 Rue Bias
 
-** Durée ** : 55 minutes
+** Durée ** : 45 minutes
 
 ** Lien ** : <http://2015.wptech.fr/session/pensez-web-performances-avec-wordpress/>
 
