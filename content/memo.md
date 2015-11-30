@@ -15,3 +15,15 @@ http://www.codeursenseine.com/assets/slides/introduction-webperf.pdf
 http://www.browserscope.org/
 
 https://openclassrooms.com/courses/les-requetes-http
+
+https://pages.zend.com/rs/zendtechnologies/images/PHP7-Performance%20Infographic.pdf
+
+---
+8.2.  Server Push
+
+   HTTP/2 allows a server to pre-emptively send (or "push") responses
+   (along with corresponding "promised" requests) to a client in
+   association with a previous client-initiated request.  This can be
+   useful when the server knows the client will need to have those
+   responses available in order to fully process the response to the
+   original request.

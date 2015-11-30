@@ -54,7 +54,7 @@ Business
 1. **Apprivoiser** la Webperf
 2. **Axes d'optimisations génériques** VS ![WordPress](img/2_wordpress.png "Logo WordPress")
 3. **Futur  de la Webperf avec**
-  * HTML2
+  * HTTP/2
   * PHP7
   * MYSQL 5.7
 
@@ -296,67 +296,100 @@ alert(s);
 
 ---
 
-<!-- 4. LE FUTURE DE LA WEBPERF HTTP2 -->
+<!-- 4. LE FUTURE DE LA WEBPERF -->
 
 <!-- .slide: data-background-color="#dd392c" -->
 
 #Futur de la WebPerf
 
-> HTTP2 / PHP5 / MySQL 5.7
+> HTTP/2 | PHP5 | MySQL 5.7
 
 --
+
+<!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
 
 ## De http/1.1...
 
 * Pas d'évolution depuis 1999
-* N connexions par domaine
-* envoi plain text
-* Dépendance navigateur
+* 6 à 13 connexions simultanées par domaine
+* Requêtes séquentielles
+* Envoie des entêtes plain text
 
 --
+
+<!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
 
 ## ...à http/2
 
-* http/2 / ~~SPDY~~
-  * Standard IETF sortie début 2015
-  * Reprends les bases de http 
+  * **Standard IETF sortie début 2015**
+  * **Reprends les bases de HTTP/1.1** 
     * (GET, POST, etc.) / status code (404) / links / header
-  * Ajoute de nouvelles features
-    * Une seul et unique connexion TCP
-    * Multiplexed connexion : asynchrone et multiple
+  * **Les nouveautés**
+    * Connexion TCP unique persistante
+    * Multiplexing : messages en paralèlles et async
     * HPACK compression standard - compression du header / encodage binaire
-    * Cache pushing : anticipation côté serveur (HTML + CSS)
-    * Optimisation et amélioration du chiffrement
-    * Priorisation des requêtes / gestion de dépendances / anticipation des connexions
+    * Server push / Server Hints : anticipation côté serveur (HTML + CSS)
 
-Note: IETF = The Internet Engineering Task Force
+<!--  IETF = The Internet Engineering Task Force
+  
+Principales nouveautés :
+* Connexion tcp unique - message/requetes qui vont circuler dans un tuyaux en parralèle sans limites de connexion simultanés
+* Multiplexing : ces messages qui sont traités de manières asynchrones
+* HPACK : compression des headers / en plus de la compression du corps qu'on a déjà aujourd'hui avec GZIP
+* Serveur Push : le serveur anticipe en envoyant de manière proactive les contenu qu'il juge nécessaire associés à la page courante (CSS notamment)
+* Server Hints : juste URL envoyé au client qui choisi d'aller chercher la ressource ou de prendre dans son cache
+-->
+
+--
+
+## Protocole HTTP/1.1
+
+![http](img/3_appel.png "http")
 
 --
 
-## Pré-requis en terme de développement
-* Sur mon code source...
-  * aucune modif à prévoir
+## Protocole HTTP/2
 
-* Compatibilité navigateur OK mais...
-  * necessite SSL
-  * pb limités sur la perfs car 1 seule connexion persistante
-
-* Compatibilité serveur OK mais...
-  * Apache : Configuration ++
-  * NGinx : Natif
+![http](img/3_appel_http2.png "http")
 
 --
+
+<!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
+
+## Support de HTTP/2
+
+* Côté client
+  * La pluspart des navigateurs
+  * Imposent SSH
+
+* Côté serveur
+  * Apache
+  * Nginx
+
+--
+
+<!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
 
 # Impacts sur les développements
 
-* A oublier
-  * Pre fetching 
+* Plus utile
   * Domain Sharding
 
-* A discuter / moins d'importance
+* Toujours utile mais moins impactant si non appliqué
   * concaténation
   * sprite CSS
-  * Inline developement
+  * Prefetching
+
+<!--
+
+* Plus utile
+  * Domain Sharding : plus de limitation en terme de connexions simultanées
+
+* Toujours utile mais moins impactant
+  * concaténation / sprite css : compression on sera toujours ammené à utilisé de la compression gzip pour le corps des réponse car seules les entêtes sontcompressés via HTTP2. On gagne plus en taille si on GZIP 1 fichier concaténé que si on GZIP les n fichiers qui le compose
+  * Pre fetching : anticipé par le serveur push si le serveur est efficace
+
+-->
 
 --
 
@@ -366,12 +399,21 @@ Note: IETF = The Internet Engineering Task Force
 
 --
 
-# http2 tout bénef ?
+<!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
+
+# http2 - Solution miracle ?
 * Quid de la maturité ?
-Note: même si rien à faire côté dev, attention à l'implémentation par les serveur web et les navigateurs
-* mauvaise utilisation des spécificités http2
-  * maintien de la connexion TCP
-  * cache Pushing
+
+* Dépendance forte des évolutions côté serveur et navigateur
+  * Maintien de la connexion TCP
+  * Serveur Push
+
+<!--
+HTTP/2 n'est pas une solution miracle. Nous restons fortement dépendant des futures évolutions des navigateurs et des serveurs
+Manque d'une vision à long terme sur pas mal de problématique et limites liées aux spécificités de http2
+- maintien de la connexion en sommeil
+- pertinence du serveur push si mal mis en oeuvre pourrait ne pas avoir l'effet recherché
+-->
 
 --
 
@@ -380,8 +422,20 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
 
 ## PHP 7
 
-* réécriture du moteur
-* compilation just-in-time
+* Nouvelles features
+* Amélioration de la gestion mémoire
+* Amélioration des performances
+
+![php7](img/5_php7_wp.png "PHP7")
+
+<!--
+- Spaceship opérator <=> 
+- classes anonymes
+- Syntaxe unicode
+- Opérateur Coalesce NULL ?
+- Generator delegation utilisation de yeld
+- Egine exception
+-->
 
 --
 
@@ -389,7 +443,18 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
 
 ## MySQL 5.7
 
+* Nouvelles features
 * Amélioration globale des perfs
+* 3 fois plus rapide que MySQL 5.6
+
+> Majeure pour WordPress - Consommation SQL très importante
+
+<!--
+- colonnes calculées
+- type JSON
+- Optimisation InnoDB
+
+-->
 
 ---
 
@@ -398,9 +463,9 @@ Note: même si rien à faire côté dev, attention à l'implémentation par les 
 <!-- .slide: data-background-color="#dd392c" -->
 
 ## Pour Conclure...
-* Webperf important et en pleine évolution
-* Domaine très large : régionalisation / CDN / Profiling côté client / Domain sharding / Stratégie de chargement de contenu ...
-* Logic général : équilibre entre les coûts et la mise en oeuvre (ca tombe bien une grande partie est relativement simple à mettre en oeuvre).
+* Domaine très large
+* Et de son avenir
+* Logique général : équilibre entre les coûts et la mise en oeuvre
 
 ---
 

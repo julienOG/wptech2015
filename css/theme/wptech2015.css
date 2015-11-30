@@ -317,3 +317,5 @@ font-size:1.2em;
 font-size:0.8em;
 color:#FFBDBD;
 }
+
+img[alt=php7] { width: 700px; }
