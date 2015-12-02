@@ -35,3 +35,13 @@ Ajouter liens
 
 http://www.webpagetest.org/result/151201_QC_GRK/1/details/ 
 http://www.webpagetest.org/result/151201_88_GQH/1/details/
+
+http://www.webpagetest.org/result/151201_7J_H34/
+http://www.webpagetest.org/result/151201_TZ_GXS/
+
+http://www.webpagetest.org/result/151201_7C_HRN/
+http://www.webpagetest.org/result/151201_Q7_J31/
+
+
+http1 - php5 http://www.webpagetest.org/result/151202_PF_1A1S/
+http1 - php7 http://www.webpagetest.org/result/151202_PF_1A1S/
