@@ -358,11 +358,11 @@ Principales nouveautés :
 
 ## Support de HTTP/2
 
-* Côté client
-  * La pluspart des navigateurs
-  * Imposent SSH
+* Côté client :
+  * La plupart des navigateurs
+  * Imposent SSL (https)
 
-* Côté serveur
+* Côté serveur :
   * Apache
   * Nginx
 
@@ -372,12 +372,12 @@ Principales nouveautés :
 
 # Impacts sur les développements
 
-* Plus utile
+* Devient inutile :
   * Domain Sharding
 
-* Toujours utile mais moins impactant si non appliqué
-  * concaténation
-  * sprite CSS
+* Toujours utile mais moins impactant si non appliqué :
+  * Concaténation
+  * Sprite CSS
   * Prefetching
 
 <!--
@@ -388,6 +388,8 @@ Principales nouveautés :
 * Toujours utile mais moins impactant
   * concaténation / sprite css : compression on sera toujours ammené à utilisé de la compression gzip pour le corps des réponse car seules les entêtes sontcompressés via HTTP2. On gagne plus en taille si on GZIP 1 fichier concaténé que si on GZIP les n fichiers qui le compose
   * Pre fetching : anticipé par le serveur push si le serveur est efficace
+
+=> oui ca comble des lacune mais n'exhonère pas de travail sur la WebPerf
 
 -->
 
@@ -434,7 +436,7 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 - Syntaxe unicode
 - Opérateur Coalesce NULL ?
 - Generator delegation utilisation de yeld
-- Egine exception
+- Engine exception
 -->
 
 --
@@ -463,8 +465,8 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 <!-- .slide: data-background-color="#dd392c" -->
 
 ## Pour Conclure...
-* Domaine très large
-* Et de son avenir
+* Webperf se pensent de la conception à la mise en prod d'un projet
+* Domaine large et forte évolution ces prochaines années
 * Logique général : équilibre entre les coûts et la mise en oeuvre
 
 ---

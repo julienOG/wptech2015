@@ -27,3 +27,11 @@ https://pages.zend.com/rs/zendtechnologies/images/PHP7-Performance%20Infographic
    useful when the server knows the client will need to have those
    responses available in order to fully process the response to the
    original request.
+
+---
+Ajouter liens
+
+
+
+http://www.webpagetest.org/result/151201_QC_GRK/1/details/ 
+http://www.webpagetest.org/result/151201_88_GQH/1/details/
