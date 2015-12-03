@@ -323,15 +323,17 @@ alert(s);
 
   * **Standard IETF sortie début 2015**
   * **Reprends les bases de HTTP/1.1** 
-    * (GET, POST, etc.) / status code (404) / links / header
+    * (GET, POST, etc.) / status code / links / header
   * **Les nouveautés**
     * Connexion TCP unique persistante
-    * Multiplexing : messages en paralèlles et async
-    * HPACK compression standard - compression du header / encodage binaire
-    * Server push / Server Hints : anticipation côté serveur (HTML + CSS)
+    * Multiplexing
+    * HPACK compression standard
+    * Server push / Server Hints
 
 <!--  IETF = The Internet Engineering Task Force
-  
+
+methode de transmission (GET, POST, etc.) / code status / formalisme des header  
+
 Principales nouveautés :
 * Connexion tcp unique - message/requetes qui vont circuler dans un tuyaux en parralèle sans limites de connexion simultanés
 * Multiplexing : ces messages qui sont traités de manières asynchrones
@@ -372,13 +374,15 @@ Principales nouveautés :
 
 # Impacts sur les développements
 
-* Devient inutile :
+* Devient inutile
   * Domain Sharding
 
-* Toujours utile mais moins impactant si non appliqué :
-  * Concaténation
-  * Sprite CSS
-  * Prefetching
+* Inutile ? <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Prefetching<!-- .element: class="fragment" data-fragment-index="1" -->
+  * Concaténation<!-- .element: class="fragment" data-fragment-index="1" -->
+  * Sprite CSS<!-- .element: class="fragment" data-fragment-index="1" -->
+
+> PAS SI EVIDENT <!-- .element: class="fragment" data-fragment-index="2" -->
 
 <!--
 
@@ -409,6 +413,8 @@ Principales nouveautés :
 * Dépendance forte des évolutions côté serveur et navigateur
   * Maintien de la connexion TCP
   * Serveur Push
+
+* Dépendance au contexte : serveur / réseau
 
 <!--
 HTTP/2 n'est pas une solution miracle. Nous restons fortement dépendant des futures évolutions des navigateurs et des serveurs
