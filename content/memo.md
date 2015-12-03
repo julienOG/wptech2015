@@ -41,7 +41,9 @@ http://www.webpagetest.org/result/151201_TZ_GXS/
 
 -- limite réseau 4Mb / dualcore 2,7go
 http1 - php5 http://www.webpagetest.org/result/151201_Q7_J31/
+http1 - php7 http://www.webpagetest.org/result/151203_C5_G6/
 http2 - php5 http://www.webpagetest.org/result/151201_7C_HRN/
+http2 - php7 http://www.webpagetest.org/result/151203_A2_1CB/
 
 
 -- limite serveur 150mb / monocore 1,6go
