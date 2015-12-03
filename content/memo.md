@@ -39,9 +39,13 @@ http://www.webpagetest.org/result/151201_88_GQH/1/details/
 http://www.webpagetest.org/result/151201_7J_H34/
 http://www.webpagetest.org/result/151201_TZ_GXS/
 
-http://www.webpagetest.org/result/151201_7C_HRN/
-http://www.webpagetest.org/result/151201_Q7_J31/
+-- limite réseau 4Mb / dualcore 2,7go
+http1 - php5 http://www.webpagetest.org/result/151201_Q7_J31/
+http2 - php5 http://www.webpagetest.org/result/151201_7C_HRN/
 
 
+-- limite serveur 150mb / monocore 1,6go
 http1 - php5 http://www.webpagetest.org/result/151202_PF_1A1S/
-http1 - php7 http://www.webpagetest.org/result/151202_PF_1A1S/
+http1 - php7 http://www.webpagetest.org/result/151202_C5_1AFT/
+http2 - php5 http://www.webpagetest.org/result/151202_JD_1AVE/
+http2 - php7 http://www.webpagetest.org/result/151202_NR_1B2E/
