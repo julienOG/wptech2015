@@ -63,6 +63,75 @@ http2 - php7 http://www.webpagetest.org/result/151203_PN_139P/
 -- serveur classique mysql5.7
 http1 - php5 http://www.webpagetest.org/result/151203_MQ_1B1Y/
 http1 - php7 http://www.webpagetest.org/result/151203_EW_1CGT/
-http2 - php5
+http2 - php5 http://www.webpagetest.org/result/151203_DH_1DPT/
 http2 - php7
 
+-- tests classiques
+http1 http://www.webpagetest.org/result/151204_6V_3E8/
+http2 http://www.webpagetest.org/result/151204_7X_3MY/
+
+
+
+-- tests charge
+affichage de 223 produits sur la page produit d'un woocommerce + storefront
+
+
+mysql 5.6 / php 5.6
+
+* Page generation time    
+    3.6872 s
+
+* Peak memory usage   
+    38,061 kB
+
+* Database query time 
+    0.2715
+
+* Database queries
+    SELECT: 504
+
+mysql 5.6 / php 7.0
+
+* Page generation time    
+    1.5818
+    0.0% of 0s limit
+
+* Peak memory usage   
+    26,268 kB
+
+* Database query time 
+    0.2451
+
+* Database queries
+    SELECT: 504
+
+mysql 5.7 / php 5.6
+
+* Page generation time    
+    3.7371
+
+* Peak memory usage   
+    38,062 kB
+
+* Database query time 
+    0.3247
+
+* Database queries
+    SELECT: 504
+
+mysql 5.7 / php 7
+
+* Page generation time    
+    1.6491
+
+* Peak memory usage   
+    26,268 kB
+
+* Database query time 
+    0.2961
+
+* Database queries
+    SELECT: 504  
+
+
+    Enhanced Speed: In benchmark tests using SysBench Read-only Point-Selects, at 1,024 connections, MySQL 5.7 delivered 1,600,000 queries per second (QPS) --  3x faster than MySQL 5.6.

@@ -403,6 +403,10 @@ Principales nouveautés :
 
 ![waterfall2](img/waterfall2.png "WaterFall 2")
 
+<!--
+Attention au cas réels / j'ai trouvé pas mal de tests avec des pages improbables contenants 53 CSS de 100ko et 
+-->
+
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
