@@ -57,7 +57,6 @@ http2 - php7 http://www.webpagetest.org/result/151202_NR_1B2E/
 http1 - php5 http://www.webpagetest.org/result/151203_XH_114J/
 http1 - php7 http://www.webpagetest.org/result/151203_E7_12ZR/
 http2 - php5 http://www.webpagetest.org/result/151203_PN_139P/
-http2 - php7 http://www.webpagetest.org/result/151203_PN_139P/
 
 
 -- serveur classique mysql5.7

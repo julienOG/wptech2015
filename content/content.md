@@ -1,7 +1,7 @@
 <!-- 1. PRESENTATION -->
 <!-- .slide: data-background-color="#000000" data-background="img/1_again.jpg" -->
 
-## ENCORE DE LA WEBPERF ?
+## ENCORE UNE CONF SUR LA WEBPERF ?
 
 --
 
@@ -19,32 +19,13 @@
 | **Yahoo**     | + 400ms       | -10%  <small>_Traffic_</small>|
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
-<!--
-
-Impact sur le business, CF stéphane RIOS selon de nombreuses études Amazon, Google, Yahoo, etc.
-Amazon : 100ms = 1% CA
-Google : référencemen naturel impact sur le référencement au dela de 4s de chargement
-Yahoo : +400ms = 10% en moins de traffic (Yahoo)
-
-Qualité de service
-↗ Expérience client
-↗ Satisfaction
-
-Réduction des coûts
-↘ Consommation de bande passante
-↘ Charge serveur
-↗ QualityScore AdWords
-
-SEO
-↗ Position dans les résultats
-↗ Crawl & fraicheur de l'index
-
-Business
-↗ Convertion
-↗ Taux de transformation
-↗ Rebonds
-
--->
+Note:
+Oui car perf essentielle
+- 1.QUALITE de service User
+- 2.COUT serveur et Bande passante
+- 3.SEO / positionnement
+- 4.Business taux de convers /rebond /transfo
+- --> Juste rappel de qq chiffres
 
 --
 
@@ -58,13 +39,30 @@ Business
   * PHP7
   * MYSQL 5.7
 
+Note:
+Pour cette conf on vous propose
+- 1.ABORDER les fondamentaux
+- 2.ETUDIER LES AXES opti
+- 3.PARLER DU FUTUR 
+
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/2_profil.jpg" -->
 
+Note:
+ON VA QUAND MEME SE PRESENTER
+
 --
 
-![globalis](img/2_globalis.png "Logo GLOBALIS")
+![globalis](img/2_Globalis.png "Logo GLOBALIS")
+
+N'hésitez pas à venir nous voir ! On recrute ! 
+
+Note:
+- SPECIALISE techno web autour de php
+- possède un pôle dédié à WordPress et a une offre WebPerf
+
+Ca tombe bien
 
 ---
 
@@ -84,6 +82,11 @@ Business
   1. **COMPRENDRE** : spécificités protocole et navigateur
   1. **OPTIMISER** : contraintes actuelles
   1. **APREHENDER** : contraintes futures
+  1. **EQUILIBRER** : coût de l'effort VS Besoin
+
+Note:
+* Sujet très vaste qui consite à Optimiser...
+* C'est à dire : COMPRENDRE...
 
 --
 
@@ -105,13 +108,19 @@ Business
 3. Appréhender les contraintes futures
 -->
 
+Note:
+Au final : Gar. à l'Sprit Vision GLOB composante dev Web
+- SRV : dépend Heb. considère...
+- NAV : dépend spec (browserscope  fourni détail)
+- RZO : important au vu de l'explosion de mobilité....
+
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/3_time.jpg" -->
 
 ## Améliorer la performance
 
-  * **Temps** : TTFB / TTR / TTI
+  * **Temps**
   * **Poids**
   * **Communication** : nombre de requettes
   * **Qualité** : complexité / optimisation du DOM
@@ -127,6 +136,14 @@ Business
   * **Qualité** : complexité / optimisation du DOM
 -->
 
+Note: 
+Du coup Améliorer Perf Consiste à
+- AméL. Tps réponse
+- Réduire PDT Content
+- Réduire/OPTI NB REQ. NAV SRV
+- Améliorer GLOBAL du DOM
+- --> OBJ FINAL RESTE XP USER
+
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/3_tool.jpg" -->
@@ -137,14 +154,12 @@ Business
 | ---------------------------------------               |:---------------------------|
 | [YSlow](http://yslow.org/)                            | [WebPageTest](http://www.webpagetest.org/)    |
 | [Opquast Desktop](https://desktop.opquast.com/fr/)    | [GTmetrix](https://gtmetrix.com/)                     |
-|                                                       | [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)               |
+| Chrome / Firefox inspectors                           | [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)               |
 
 > **Pensez à utiliser votre navigateur**
   * Outils développeurs
   * Informations utiles
   * Simulation réseau/terminaux
-
-
 
 <!--
 Coupler à un outil d'analytics tel que Google Analytics ou Dynatrace pour faire le parralèle avec les taux de rebonds, de conversion...
@@ -153,24 +168,19 @@ Navigateur :
 - Offre les outils de simulation réseau / terminaux pour les tests
 -->
 
---
-
-## Protocole HTTP/1.1
-
-![http](img/3_http.png "http")
-
-<!--
-HTTP/1.1
-* Suite de requetes séquentielles
-* requete : entete (host / cookie / type de connexion close|keepalive /content-type / content-length) + corps 
-* réponse : status + entete (date / serveur / content type / content-length / set-cookie) + corps
--->
+Note:
+- Je ne m'étale pas trop sur les outils de mesure.
+- Juste savoir que Côté
+- Notament WebPageTest
+- Pensez aussi à vos navigateur Exemple de chrome PROPOSE Différentes INFOS.
+- Dont un des trucs les + utiles WATERFALL
 
 --
 
 ## Waterfall
 
 ![waterfall](img/3_waterfall.png "http")
+
 <!--
 Désolé pour le test un peu foireux ce jour la =)
 Waterfall
@@ -179,29 +189,12 @@ Waterfall
 * Document complete : fin de chargement de la page
 -->
 
---
+Note:
+- Outil intéressant car visuel
+- Affiche l'execution des requetes LIE PROT HTTP entre NAV/SRV
+- Start Render : premier rendu visuel
+- DOC Complete : page chargé
 
-<!-- .slide: data-background-color="#FFF" data-background="img/3_wordpress.jpg" -->
-
-## Et WordPress dans tout ça ?
-* Structure saine pour la Webperf
-* Plusieurs points d'optimisation prévus ...
-* ... mais pas automatiques
-
-* WARNING sur les développements tiers :
-  * Plugins
-  * Thèmes premiums
-
-
-Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
-* Passif de WordPress pas reconnu pour son orientation performance
-* Possibilité de l'optimiser en utilisant des règles spécifiques
-* De nombreux développements tiers utilisés non optimisés (ne dépend pas que du coeur)
---> si on n'y prends pas garde le danger est partout
-
-* intéret du BO VS FO
-
-* Nous nous basons aujourd'hui sur nos expériences notamment sur la reprise de code source lié à la TMA pour les exemples d'optimisations
 
 ---
 
@@ -209,90 +202,127 @@ Note: * Réponds au critères classique de la WebPerf (ca reste du Web en PHP)
 
 <!-- .slide: data-background-color="#dd392c" -->
 
-#Axes d'optimisations
+#OPTIMISER
 
-> Génériques VS WordPress
+ > * En général ?
+<br>
+ > * Avec WordPress ?
+
+Note: 
+- Chargement du core efficace mais
+- Tout dépend des thèmes et plugins
+- Les optimisations ne sont pas automatiques
+- Quels plugins pour la webperf ?
+- Quelles bonnes pratiques de développement ?
 
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/3_optimisation.jpg" -->
 
-## Libellé de l'optimisation
-* Information 1
-* Information 2
-
-**Optimisation pour WordPress**
-* Information 1
-* Information 2
-
-```php
-var s = "JavaScript syntax highlighting";
-alert(s);
-```
-
-
---
-
-## Cache serveur
-* Cache opcode
-* Cache mémoire (-> object-cache.php)
-* Cache fichier (-> advanded-cache.php)
-* Cache mysql
+## Utilisez le cache !
+* Cache serveur / PHP / SQL
+* Cache clients / Browser
+* Reverse proxy
+* object-cache.php, advanded-cache.php
+<!-- .element: class="fragment" data-fragment-index="1" -->
 * Transients API
-* (reverse proxy, https://spudpress.com/)
+<!-- .element: class="fragment" data-fragment-index="1" -->
+* WP Super Cache, Batcache, W3 Total Cache, WP-Rocket ...
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+Note:
+- opcode, mémoire, fichier
+- expire headers
+- varnish, spudpress, AMP
+- dropins
+- N plugins, N solutions
 
 --
 
-## Cache client
-* Expire headers
-* 2nd view / cache plein
+<!-- .slide: data-background-color="#FFF" data-background="img/3_optimisation.jpg" -->
 
---
-
-## Diminuer le nombre de requêtes
-* Concaténation
-* Sprites
-* Data-URI
+## Diminuez le nombre de requêtes !
+* Concaténation, Sprites
 * Icon-fonts
-* Chargement asynchrone / lazy-load
+* Media-queries
+* Que chargent les plugins ?
+<!-- .element: class="fragment" data-fragment-index="1" -->
+* minQueue, wp-better-minify
+<!-- .element: class="fragment" data-fragment-index="1" -->
+* Pre-processing du thème (css, js)
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+Note:
+- Sage, theme-starter
+- Solutions tout en un
+- Mutualiser les ressources : ex ajax-loader.gif
 
 --
 
-## Diminuer le poids des ressources
-* Minification
-* Optimisation des images
+<!-- .slide: data-background-color="#FFF" data-background="img/3_optimisation.jpg" -->
+
+## Allegez vos contenus !
 * Compression gzip
-* Servir des ressources adaptées au support
+* Minification, optimisation des images
+* minQueue, wp-better-minify, Imagify
+<!-- .element: class="fragment" data-fragment-index="1" -->
+* WP 4.4 : <img srcset=".." sizes=".."
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+Note:
+- gzip : gain immédiat et transparent
+- 1 fichiers de 10 ressoucres < 10 fichiers
+- Ne servir que le contenu approprié
 
 --
 
-## Prioriser les ressources
-* Positions des css / js
+<!-- .slide: data-background-color="#FFF" data-background="img/3_optimisation.jpg" -->
+
+## Soyez asyncrhones !
+* C'est quoi ?
+<!-- .element: class="fragment" data-fragment-index="1" -->
 * Ligne de flotaison
-* Attention au navigateur
+<!-- .element: class="fragment" data-fragment-index="2" -->
+* Lazy-load
+<!-- .element: class="fragment" data-fragment-index="2" -->
+* ajax-load-more
+<!-- .element: class="fragment" data-fragment-index="3" -->
+* Theming spécifique
+<!-- .element: class="fragment" data-fragment-index="3" -->
+
+Note:
+- Ne charger que ce qui est visible, ou va l'être
+- Du travail spécifique, après étude et stats
+- Essentiel pour des grosses applications
+- Exemple facebook & twitter
 
 --
 
-## Diminuer le temps de dialogue
-* Cookies-free domains
-* SSL ? Keep-alive ?
-* Domain sharding ? CDN ...
+<!-- .slide: data-background-color="#FFF" data-background="img/3_wordpress.jpg" -->
 
---
+## Les bonnes pratiques
+* WordPress !
+<!-- .element: class="fragment" data-fragment-index="1" -->
+* Script-loader différentiel <!-- wp_enqueue_scripts, wp_enqueue_styles -->
+<!-- .element: class="fragment" data-fragment-index="2" -->
+* Choisissez les bons hooks !
+<!-- .element: class="fragment" data-fragment-index="3" -->
+* Respectez le template-hierarchy
+<!-- .element: class="fragment" data-fragment-index="4" -->
+* Étudiez les plugins tiers
+<!-- .element: class="fragment" data-fragment-index="5" -->
+* Méthode et theme-starters
+<!-- .element: class="fragment" data-fragment-index="6" -->
 
-## Particularités WordPress
-* wp_enqueue_scripts, wp_enqueue_styles
-* Nettoyer la base de données
-* Plugins tiers ? Thèmes premium ?
-* Template-hierarchy
-* Utilisez les hooks !
-* Traitements en Back-Office et non à l'affichage
+Note:
+- Utilisez ce que WordPress prévoit (mieux que vous)
+- Images sizes -> theming
+- Code propre -> archi, algorithmes
+- Les plugins tiers, c'est le mal
+- Documents de références : Checklist Opquast, Yahoo!'s best practices, Google PageSpeed rules, HTML5BP
+- Penser volumétrie : répartition des charges, domain sharding, gros multisite, HyperDB
 
---
-
-## Considérations généales
-* 1 même calcul doit se faire 1 seule fois
-* Ayez des méthodes : frameworks, theme-starter, skeletons
+<!-- Factoriser, Lib de requetes, ne pas multiplier les ressources -->
 
 ---
 
@@ -303,6 +333,9 @@ alert(s);
 #Futur de la WebPerf
 
 > HTTP/2 | PHP5 | MySQL 5.7
+
+Note:
+Passon au futur de la web perf avec tout d'abord HTTP/2
 
 --
 
@@ -315,6 +348,13 @@ alert(s);
 * Requêtes séquentielles
 * Envoie des entêtes plain text
 
+Note:
+Juste un petit retour sur HTTP/1.1.
+- PROT pas evolué depuis
+- LIMITE ... En fonction nav (browserScope)
+- OFFRE un traitement séquentiel...
+- ENVOI... pas de compression. Entete qui contiennent notament les info cookie potentiellement volumineux...
+
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
@@ -325,7 +365,7 @@ alert(s);
   * **Reprends les bases de HTTP/1.1** 
     * (GET, POST, etc.) / status code / links / header
   * **Les nouveautés**
-    * Connexion TCP unique persistante
+    * Connexion TCP unique persistante par domaine
     * Multiplexing
     * HPACK compression standard
     * Server push / Server Hints
@@ -342,17 +382,35 @@ Principales nouveautés :
 * Server Hints : juste URL envoyé au client qui choisi d'aller chercher la ressource ou de prendre dans son cache
 -->
 
+Note:
+- The internet Enginiering Task Force
+- Reprend base http/1 -> assurer la compatibilité 
+- Connexion TCP unique + multiplexing : permet l'execution de plusieurs req en para.
+- Compression HPACK des entetes
+- Anticipation qui propose les ressources utiles avant la demande du navigateur
+
 --
 
 ## Protocole HTTP/1.1
 
 ![http](img/3_appel.png "http")
 
+Note:
+- Par requete on a une etape de connexion
+- Tout est séquentiel
+
 --
 
 ## Protocole HTTP/2
 
 ![http](img/3_appel_http2.png "http")
+
+Note:
+- 1.Connexion Unique : tout passe dans un seul tuyaux
+- 2.Anticipation du serveur qui envoi les infos ici ...
+- 3. et 4. on voit avantage du Multiplexing + connexion unique
+- possibilité de requetes en parallèle
+- 4. NOTAMENT le navigatueur peut meme requeté en parallèle des retours du serveur
 
 --
 
@@ -368,6 +426,13 @@ Principales nouveautés :
   * Apache
   * Nginx
 
+Note:
+- Qu'est ce qui supporte http/2 ?
+- NAV ok sur tous les derniers
+- SRV, pour reprendre les 2 plus utilisés support sur les dernières versions : 
+- APACHE supporte moyannant config + Module tiers
+- NGINX Juste des points de config
+
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
@@ -378,11 +443,9 @@ Principales nouveautés :
   * Domain Sharding
 
 * Inutile ? <!-- .element: class="fragment" data-fragment-index="1" -->
-  * Prefetching<!-- .element: class="fragment" data-fragment-index="1" -->
   * Concaténation<!-- .element: class="fragment" data-fragment-index="1" -->
-  * Sprite CSS<!-- .element: class="fragment" data-fragment-index="1" -->
-
-> PAS SI EVIDENT <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Sprite<!-- .element: class="fragment" data-fragment-index="1" -->
+  * PAS SI EVIDENT <!-- .element: class="fragment" data-fragment-index="2" -->
 
 <!--
 
@@ -397,15 +460,17 @@ Principales nouveautés :
 
 -->
 
+Note:
+- Et l'impact sur mon développement ?
+- DOMAIN S. : Par Connexion Unique par domaine + Multiplexig. Contre productif
+- La ou on peut se poser Q. c'est plus sur les sujets de concaténation.
+- Parfois présenté comme inutile, on est un peu plus mitigé / aux tests qu'on a effectué.
+- Temps : COMPLIQUE de se prononcé / cas par cas en fonction caractéristiques de la page impacté (Réseau / concat intelligent)
+- Poid influence le temps : Concaténation reste la meilleure solution NOTAMENT SI on compresse le contenu (GZIP) : 1 gros fichier COMPRESSE < N petits fichiers compressé
+
 --
 
 # Impact sur le Waterfall
-
-![waterfall2](img/waterfall2.png "WaterFall 2")
-
-<!--
-Attention au cas réels / j'ai trouvé pas mal de tests avec des pages improbables contenants 53 CSS de 100ko et 
--->
 
 --
 
@@ -456,8 +521,9 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 ## MySQL 5.7
 
 * Nouvelles features
-* Amélioration globale des perfs
 * 3 fois plus rapide que MySQL 5.6
+
+![mysql_chart](img/5_mysql_chart.png "MysqlChart")
 
 > Majeure pour WordPress - Consommation SQL très importante
 
@@ -467,6 +533,43 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 - Optimisation InnoDB
 
 -->
+
+--
+
+## Quelques résultats (Côté Client)
+
+* WordPress + WooCommerce + StoreFront + PHP 5.6 HTTP/1.1
+* Page de liste de 22 produits
+* Tests côté client
+
+|               | Load time     | First Byte      | 
+|:--------------|:--------------|:----------------|
+| -> HTTP/2     | -5% à -10%    | 0% à -3%        |
+| -> PHP 7      | -5% à -14%    | -22% à -28%     |
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+<!--
+load     First   start render
+php5 http1 5.201s   0.611s  1.895s
+php5 http2 4.901s   0.582s  1.894s
+php7 http2 4.674s   0.423s  1.391s
+
+2.646s  1.338s  2.295s
+2.575s  1.341s  2.294s
+2.255s  1.053s  2.194s
+-->
+
+--
+
+## Quelques résultats (Côté Serveur)
+
+* Page de liste de 223 produits (504 requêtes SQL)
+* Tests côté serveur PHP 5.6 VS PHP 7
+
+| Memory Usage  | Page generation time  |
+|:--------------|:----------------------|
+| -28%          | -58%                  | 
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -478,6 +581,13 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 * Webperf se pensent de la conception à la mise en prod d'un projet
 * Domaine large et forte évolution ces prochaines années
 * Logique général : équilibre entre les coûts et la mise en oeuvre
+
+Note:
+- Attention à ne pas dégrader : SEO, UX
+- On optimise pour l'utilisateur, pas pour les outils de stats
+- Comprendre et structurer ses applications
+- Les technos sont de plus en plus efficaces
+- Mais elles ne font pas l'appli à votre place : tout dépend des développements
 
 ---
 
@@ -497,12 +607,16 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 - [Ajax Load More](https://fr.wordpress.org/plugins/ajax-load-more/)
 - [Soil](https://github.com/roots/soil)
 
+---
+
 ## Liens et références
 - [GTmetrix](https://gtmetrix.com/)
 - [WebPageTest](http://www.webpagetest.org/)
 - [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/)
 - [Query Monitor](https://fr.wordpress.org/plugins/query-monitor/)
 - [YSlow](http://yslow.org/)
+
+---
 
 ## Documents de référence
 - [Checklist Opquast](http://checklists.opquast.com/webperf/)
@@ -513,8 +627,10 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 - [Google PageSpeed rules](https://developers.google.com/speed/docs/insights/rules)
 - [Google Developers > fundamentals > performance](https://developers.google.com/web/fundamentals/performance/)
 
+<!--
 ## Conférences liées
 - [Webperf 2.0 (Paris-web 2015)](http://www.paris-web.fr/2015/conferences/webperf-20.php)
 - [Comprendre et optimiser la base de données WordPress (WP-TECH 2014)](http://2014.wptech.fr/session/bdd-wordpress/)
 - [Mise en place d’un cache serveur (WP-TECH 2014)](http://2014.wptech.fr/session/cache-serveur/)
 - [Mon site est lent ! Que faire ? (WordCamp Paris 2015)](https://paris.wordcamp.org/2015/session/mon-site-est-lent-que-faire/)
+-->
