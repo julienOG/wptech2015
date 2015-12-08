@@ -32,7 +32,7 @@ Oui car perf essentielle
 ## Voyons ça de plus près...
 <!-- .slide: data-background-color="#FFF" data-background="img/2_speed.jpg" -->
 
-1. **Apprivoiser** la Webperf
+1. **Comprendre** la Webperf
 2. **Axes d'optimisations génériques** VS ![WordPress](img/2_wordpress.png "Logo WordPress")
 3. **Futur  de la Webperf avec**
   * HTTP/2
@@ -70,7 +70,7 @@ Ca tombe bien
 
 <!-- .slide: data-background-color="#dd392c" -->
 
-# Apprivoiser la WebPerf
+# Comprendre la WebPerf
 
 --
 
@@ -256,6 +256,7 @@ Note:
 - Sage, theme-starter
 - Solutions tout en un
 - Mutualiser les ressources : ex ajax-loader.gif
+- Requete vide : 100ms forfaitare
 
 --
 
@@ -332,7 +333,7 @@ Note:
 
 #Futur de la WebPerf
 
-> HTTP/2 | PHP5 | MySQL 5.7
+> HTTP/2 | PHP 7 | MySQL 5.7
 
 Note:
 Passon au futur de la web perf avec tout d'abord HTTP/2
@@ -362,7 +363,7 @@ Juste un petit retour sur HTTP/1.1.
 ## ...à http/2
 
   * **Standard IETF sortie début 2015**
-  * **Reprends les bases de HTTP/1.1** 
+  * **Reprend les bases de HTTP/1.1** 
     * (GET, POST, etc.) / status code / links / header
   * **Les nouveautés**
     * Connexion TCP unique persistante par domaine
@@ -447,6 +448,8 @@ Note:
   * Sprite<!-- .element: class="fragment" data-fragment-index="1" -->
   * PAS SI EVIDENT <!-- .element: class="fragment" data-fragment-index="2" -->
 
+[Article PerfPlanet sur le sujet](http://calendar.perfplanet.com/2015/forgo-js-packaging-not-so-fast/)<!-- .element: class="fragment" data-fragment-index="2" -->
+
 <!--
 
 * Plus utile
@@ -472,18 +475,20 @@ Note:
 
 # Impact sur le Waterfall
 
+* [HTTP/1.1](http://www.webpagetest.org/result/151204_6V_3E8/)
+* [HTTP/2](http://www.webpagetest.org/result/151204_7X_3MY/)
+
 --
 
 <!-- .slide: data-background-color="#FFF" data-background="img/5_http.jpg" -->
 
 # http2 - Solution miracle ?
-* Quid de la maturité ?
+* La question se pose autrement
+* Amélioration du protocole != optimisation de vos pages
+* Vers un web plus fluide, mais encore du travail
 
-* Dépendance forte des évolutions côté serveur et navigateur
-  * Maintien de la connexion TCP
-  * Serveur Push
-
-* Dépendance au contexte : serveur / réseau
+Note:
+- Votre voiture sera plus rapide, mais 800km = 800km
 
 <!--
 HTTP/2 n'est pas une solution miracle. Nous restons fortement dépendant des futures évolutions des navigateurs et des serveurs
@@ -505,6 +510,13 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 
 ![php7](img/5_php7_wp.png "PHP7")
 
+Note:
+- nouvelles syntaxes, plus légères
+- classes anonymes, de nouveaux operateurs
+- reecriture d'une partie du core
+- WP = 2 fois plus vite
+- On parle de la generation, pas du download
+
 <!--
 - Spaceship opérator <=> 
 - classes anonymes
@@ -525,7 +537,13 @@ Manque d'une vision à long terme sur pas mal de problématique et limites liée
 
 ![mysql_chart](img/5_mysql_chart.png "MysqlChart")
 
-> Majeure pour WordPress - Consommation SQL très importante
+> WordPress = Consommation SQL +++
+
+Note:
+- très vite
+- colonnes calculées, type json natif
+- meilleures perfs, amelioration du moteur
+- important pour les CMS
 
 <!--
 - colonnes calculées
@@ -571,6 +589,33 @@ php7 http2 4.674s   0.423s  1.391s
 | -28%          | -58%                  | 
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
+--
+
+Tests WordPress + WooCommerce + StoreFront / 22 produits
+
+Limite = Bande passante : 4Mb / dualcore 2,7go
+* [http1 - php5](http://www.webpagetest.org/result/151201_Q7_J31/)
+* [http1 - php7](http://www.webpagetest.org/result/151203_C5_G6/)
+* [http2 - php5](http://www.webpagetest.org/result/151201_7C_HRN/)
+* [http2 - php7](http://www.webpagetest.org/result/151203_A2_1CB/)
+
+
+Limite = Server : 150mb / monocore 1,6go
+* [http1 - php5](http://www.webpagetest.org/result/151202_PF_1A1S/)
+* [http1 - php7](http://www.webpagetest.org/result/151202_C5_1AFT/)
+* [http2 - php5](http://www.webpagetest.org/result/151202_JD_1AVE/)
+* [http2 - php7](http://www.webpagetest.org/result/151202_NR_1B2E/)
+
+--
+
+## Autres tests
+
+WordPress + WooCommerce + StoreFront / Liste 223 produits
+
+tests classiques
+* [http1](http://www.webpagetest.org/result/151204_6V_3E8/)
+* [http2](http://www.webpagetest.org/result/151204_7X_3MY/)
+
 ---
 
 <!-- 6. CONCLUSION -->
@@ -578,9 +623,7 @@ php7 http2 4.674s   0.423s  1.391s
 <!-- .slide: data-background-color="#dd392c" -->
 
 ## Pour Conclure...
-* Webperf se pensent de la conception à la mise en prod d'un projet
-* Domaine large et forte évolution ces prochaines années
-* Logique général : équilibre entre les coûts et la mise en oeuvre
+
 
 Note:
 - Attention à ne pas dégrader : SEO, UX
@@ -606,6 +649,7 @@ Note:
 - [MinQueue](https://fr.wordpress.org/plugins/minqueue/)
 - [Ajax Load More](https://fr.wordpress.org/plugins/ajax-load-more/)
 - [Soil](https://github.com/roots/soil)
+- [Query Monitor](https://fr.wordpress.org/plugins/query-monitor/)
 
 ---
 
